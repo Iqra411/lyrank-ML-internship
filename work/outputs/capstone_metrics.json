@@ -1,0 +1,56 @@
+{
+  "base_rate": 0.542,
+  "n_scored_pages": 30000,
+  "n_clients": 32,
+  "baseline_rule": {
+    "flagged_n": 7212,
+    "flagged_decline_rate": 0.617,
+    "unflagged_decline_rate": 0.518
+  },
+  "model_grouped_split": {
+    "roc_auc": 0.75,
+    "avg_precision": 0.618,
+    "precision_at_20": 0.65,
+    "precision_at_50": 0.74,
+    "precision_at_100": 0.72,
+    "test_rows": 2325,
+    "test_clients_held_out": 6
+  },
+  "model_random_split_for_comparison": {
+    "roc_auc": 0.758,
+    "avg_precision": 0.768,
+    "precision_at_20": 0.95,
+    "precision_at_50": 0.9,
+    "precision_at_100": 0.9,
+    "note": "31 of 32 clients overlap between train and test under random splitting"
+  },
+  "rule_missed_model_caught": {
+    "rule_missed": 903,
+    "model_recovered": 670,
+    "pct": 0.742
+  },
+  "action_mix": {
+    "monitor": 17009,
+    "refresh": 9569,
+    "refresh_and_review_ctr": 3340,
+    "expand_and_refresh": 82
+  },
+  "top_archetype": {
+    "freshness_tier": "91-180",
+    "position_tier": "top_3",
+    "decline_rate": 0.679,
+    "n": 302
+  },
+  "control_archetype": {
+    "freshness_tier": "91-180",
+    "position_tier": "deep",
+    "decline_rate": 0.359,
+    "n": 312
+  },
+  "leakage_check": {
+    "honest_auc": 0.75,
+    "leaky_auc": 1.0,
+    "leaky_feature_importance_pct": 82.7
+  },
+  "note": "All figures are decision-support, not causal claims."
+}
